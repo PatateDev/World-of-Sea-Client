@@ -1,0 +1,55 @@
+#ifndef SHIP_H
+#define SHIP_H
+
+#include "Cannonballs.h"
+#include "Cannon.h"
+#include "Design.h"
+
+#define MAX_DESIGN 64
+#define MAX_CANNONBALLS 32
+#define MAX_CANNON 32
+
+class Ship
+{
+    public:
+        Ship();
+        // When you buy
+        void addCannonballs(Cannonballs ammo);
+        void addCannon(Cannon cannon);
+        void addDesign(Design design);
+        void addMaxHp(int hp);
+        //
+        void setCannonballs(Cannonballs ammo);
+        void setCannonballs(std::string type);
+        void setCannon(Cannon cannon);
+        void setDesign(Design design);
+        void setDesign(std::string name);
+        void setHp(int hp);
+
+        Cannonballs getCannonballs();
+        std::string getCannonballsType();
+        Cannon getCannon();
+        Design getDesign();
+        std::string getDesignName();
+        int getHp();
+
+        virtual ~Ship();
+    protected:
+    private:
+        int m_golds;
+
+        int m_mapHp;
+        int m_hp;
+
+        Cannon m_cannonArray[MAX_CANNON + 12];
+        Cannon m_cannonEquipedArray[MAX_CANNON + 12];
+
+        Cannonballs m_ammoArray[MAX_CANNONBALLS + 12];
+        int m_ammoEquiped;
+
+        Design m_designArray[MAX_DESIGN + 12];
+        int m_designEquiped;
+
+};
+
+#endif // SHIP_H
