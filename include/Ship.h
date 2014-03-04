@@ -18,13 +18,19 @@ class Ship
         void addCannon(Cannon cannon);
         void addDesign(Design design);
         void addMaxHp(int hp);
+        void addMaxCannon(int nb);
         //
         void setCannonballs(Cannonballs ammo);
         void setCannonballs(std::string type);
-        void setCannon(Cannon cannon);
+        void setCannonEquiped(Cannon cannon);
         void setDesign(Design design);
         void setDesign(std::string name);
         void setHp(int hp);
+        void setMaxCannon(int nb);
+
+        void delCannon(Cannon cannon);
+
+        void resetCannonEquiped(Cannon cannon); // NON FAIT
 
         Cannonballs getCannonballs();
         std::string getCannonballsType();
@@ -32,6 +38,7 @@ class Ship
         Design getDesign();
         std::string getDesignName();
         int getHp();
+        int getMaxCannon();
 
         virtual ~Ship();
     protected:
@@ -43,6 +50,7 @@ class Ship
 
         Cannon m_cannonArray[MAX_CANNON + 12];
         Cannon m_cannonEquipedArray[MAX_CANNON + 12];
+        int m_maxCannon;
 
         Cannonballs m_ammoArray[MAX_CANNONBALLS + 12];
         int m_ammoEquiped;

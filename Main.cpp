@@ -12,6 +12,15 @@ int main(int argc, char*argv[])
     canonElite.setHitRate(75);
     canonElite.setRange(30);
     canonElite.setType("Cannon Elite");
+    canonElite.setCannon(100);
+
+    // CLASS CANNON
+    Cannon canonSimple;
+    canonSimple.setCadence(2.5);
+    canonSimple.setHitRate(75);
+    canonSimple.setRange(30);
+    canonSimple.setType("Cannon Simple");
+    canonSimple.setCannon(100);
     // CLASS CANNONBALLS
     Cannonballs bouletCreux;
     bouletCreux.setAmmo(10000);
@@ -26,17 +35,14 @@ int main(int argc, char*argv[])
 
     // CLASS SHIP
     Ship monBateau;
-    monBateau.addMaxHp(100);
-    std::cout << std::endl << std::endl;
+    monBateau.addCannon(canonElite);
+    monBateau.addCannon(canonSimple);
+    monBateau.setMaxCannon(170);
+    monBateau.setCannonEquiped(canonElite);
+    monBateau.setCannonEquiped(canonElite);
+    monBateau.setCannonEquiped(canonElite);
     monBateau.addDesign(elite1);
-    std::cout << std::endl << std::endl;
-    monBateau.addDesign(elite2);
-    std::cout << std::endl << std::endl;
     monBateau.setDesign("Elite 1");
-    std::cout << std::endl << std::endl;
-    std::cout << monBateau.getDesignName();
-
-
 
 
     while (window.isOpen())

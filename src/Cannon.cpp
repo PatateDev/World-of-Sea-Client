@@ -1,7 +1,7 @@
 #include "../include/Cannon.h"
 
 Cannon::Cannon()
-: m_type("NULL")
+: m_type("NULL"), m_nbCannon(0)
 {
     //ctor
 }
@@ -9,6 +9,11 @@ Cannon::Cannon()
 void Cannon::addCannon(int nb)
 {
     m_nbCannon =  m_nbCannon + nb;
+}
+
+void Cannon::delCannon(int nb)
+{
+    m_nbCannon = m_nbCannon - nb;
 }
 
 void Cannon::setHitRate(int probabilitie)

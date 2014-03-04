@@ -9,6 +9,7 @@ class Cannon
         Cannon();
 
         void addCannon(int nb);
+        void delCannon(int nb);
 
         void setHitRate(int probabilitie);
         void setCadence(double time);
