@@ -5,8 +5,9 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <cstdlib>
+#include <sstream>
 
-#define LAUNCHER_WIDTH_X 800
-#define LAUNCHER_HEIGHT_Y 640
+#define LAUNCHER_WIDTH_X 1280
+#define LAUNCHER_HEIGHT_Y 800
 
 #endif // MAIN_H_INCLUDED

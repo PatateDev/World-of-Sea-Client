@@ -3,46 +3,27 @@
 
 int main(int argc, char*argv[])
 {
+    // DECLARATION
     sf::RenderWindow window(sf::VideoMode(LAUNCHER_WIDTH_X, LAUNCHER_HEIGHT_Y), "World of Sea v0");
     sf::Event event;
+    MenuBar menuBar;
+    MenuBuyCannonballs menuBuyCannonballs;
+    MenuTrade menuTrade;
 
-    // CLASS CANNON
-    Cannon canonElite;
-    canonElite.setCadence(2.5);
-    canonElite.setHitRate(75);
-    canonElite.setRange(30);
-    canonElite.setType("Cannon Elite");
-    canonElite.setCannon(100);
+    /*menuTrade.setFont("resources/fonts/arial.ttf");
+    menuTrade.setLabelDescriptionText("Description");
+    menuTrade.setLabelNameText("Wooden Ammo");
+    menuTrade.setLabelTextfieldText("Textfield");
+    menuTrade.setLabelImageTexture("resources/sprites/boulet bois.jpg");
 
-    // CLASS CANNON
-    Cannon canonSimple;
-    canonSimple.setCadence(2.5);
-    canonSimple.setHitRate(75);
-    canonSimple.setRange(30);
-    canonSimple.setType("Cannon Simple");
-    canonSimple.setCannon(100);
-    // CLASS CANNONBALLS
-    Cannonballs bouletCreux;
-    bouletCreux.setAmmo(10000);
-    bouletCreux.setDamage(100);
-    bouletCreux.setType("Boulet Creux");
-    bouletCreux.setWeight(10);
-    //CLASS DESIGN
-    Design elite1;
-    elite1.setName("Elite 1");
-    Design elite2;
-    elite2.setName("Elite 2");
+    menuTrade.setButtonTexture("resources/sprites/Bouton buy cannonballs.png");
+    menuTrade.setButtonTextureFocused("resources/sprites/Bouton buy cannonballs focus.png");
 
-    // CLASS SHIP
-    Ship monBateau;
-    monBateau.addCannon(canonElite);
-    monBateau.addCannon(canonSimple);
-    monBateau.setMaxCannon(170);
-    monBateau.setCannonEquiped(canonElite);
-    monBateau.setCannonEquiped(canonElite);
-    monBateau.setCannonEquiped(canonElite);
-    monBateau.addDesign(elite1);
-    monBateau.setDesign("Elite 1");
+    menuTrade.setTextfieldTexture("resources/sprites/textfield.png");
+    menuTrade.setTextfieldTextureFocused("resources/sprites/textfieldFocus.png");
+
+    menuTrade.setPosition(200, 200);*/
+
 
 
     while (window.isOpen())
@@ -51,6 +32,30 @@ int main(int argc, char*argv[])
 
 		if (event.type == sf::Event::Closed)
 			window.close();
+
+        menuBar.update(event);
+
+        window.clear(sf::Color::White);
+
+        menuBar.render(window);
+        //menuTrade.update(event);
+        //menuTrade.render(window);
+        switch (menuBar.getMenu())
+        {
+        case 0:
+            break;
+        case 1:
+            menuBuyCannonballs.update(event);
+            menuBuyCannonballs.render(window);
+            break;
+        case 2:
+            break;
+        case 7:
+            window.close();
+            break;
+        }
+
+        window.display();
     }
 
 
