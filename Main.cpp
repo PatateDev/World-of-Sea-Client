@@ -4,7 +4,7 @@
 int main(int argc, char*argv[])
 {
     // DECLARATION
-    sf::RenderWindow window(sf::VideoMode(LAUNCHER_WIDTH_X, LAUNCHER_HEIGHT_Y), "World of Sea v0");
+    sf::RenderWindow window(sf::VideoMode(LAUNCHER_WIDTH_X, LAUNCHER_HEIGHT_Y), "World of Sea v0", sf::Style::Close | sf::Style::Titlebar);
     sf::Event event;
     MenuBar menuBar;
     MenuBuyCannonballs menuBuyCannonballs;
