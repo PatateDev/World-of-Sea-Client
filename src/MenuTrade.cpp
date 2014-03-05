@@ -3,10 +3,10 @@
 MenuTrade::MenuTrade()
 :Menu(sf::Sprite()),
 m_buttonBuy(m_buttonTexture, m_buttonTextureFocused, m_buttonTextureFocused),
-m_textfield(m_textfieldTexture, m_textfieldTextureFocus, m_font, "")
-//m_labelDescription(m_font, m_labelDescriptionText)
-//m_labelName(m_font, m_labelNameText),
-//m_labelTextfield(m_font, m_labelTextfieldText)
+m_textfield(m_textfieldTexture, m_textfieldTextureFocus, m_font, ""),
+m_labelDescription(),
+m_labelName(),
+m_labelTextfield()
 {
     m_textfield.setModel(new sf::ui::NumericTextFieldModel());
     m_textfield.setCanBeEmpty(true);
@@ -15,7 +15,7 @@ m_textfield(m_textfieldTexture, m_textfieldTextureFocus, m_font, "")
     m_textfield.setMaxLength(10);
 
     m_labelImage.setTexture(m_labelImageTexture);
-    m_labelBackground.setTexture(m_labelImageBackground);
+    setLabelBackgroundTexture("resources/sprites/Background trade.png");
 
     m_labelTextfield.setFontColor(sf::Color::Black);
     m_labelDescription.setFontColor(sf::Color::Black);
@@ -53,7 +53,7 @@ void MenuTrade::onComponentEvent(const sf::ui::ComponentEvent &event)
             std::cout << "Unknown button" << std::endl;
 		  }
          //std::cout << "Menu: " << m_menu << std::endl;
-		 std::cout << "Le button à l'addresse " << be.getSource() << " a été cliqué" << std::endl;
+		 std::cout << "Le button a l'addresse " << be.getSource() << " a Ã©tÃ© cliquÃ©" << std::endl;
 	}
 }
 
@@ -187,7 +187,6 @@ void MenuTrade::setFont(sf::String link)
 int MenuTrade::getValue()
 {
     return m_value;
-    m_value = 0;
 }
 
 // POSITION

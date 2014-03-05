@@ -11,7 +11,7 @@ MenuBuyCannonballs::MenuBuyCannonballs()
     menuTrade.setLabelImageTexture("resources/sprites/Boulet bois2.png");
 
     menuTrade.setButtonTexture("resources/sprites/Bouton Buy2.png");
-    menuTrade.setButtonTextureFocused("resources/sprites/Bouton Buy focus2.png");
+    menuTrade.setButtonTextureFocused("resources/sprites/Bouton Buy2 focus.png");
 
     menuTrade.setTextfieldTexture("resources/sprites/textfield.png");
     menuTrade.setTextfieldTextureFocused("resources/sprites/textfieldFocus.png");

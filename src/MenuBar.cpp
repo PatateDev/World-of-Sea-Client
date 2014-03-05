@@ -95,46 +95,43 @@ void MenuBar::onComponentEvent(const sf::ui::ComponentEvent &event)
     if (dynamic_cast<sf::ui::ButtonClickedEvent const*>(&event))
     {
 		const sf::ui::ButtonClickedEvent &be = dynamic_cast<sf::ui::ButtonClickedEvent const&>(event);
-		// Pour tester quel button a ete clique :
 
-		  if (be.getSource() == &m_buttonAccueil)
-		  {
-            m_menu = 0;
-          }
-		  else if (be.getSource() == &m_buttonBuyCannonballs)
-		  {
-            m_menu = 1;
-		  }
-		  else if (be.getSource() == &m_buttonBuyCannons)
-          {
-            m_menu = 2;
-          }
-          else if (be.getSource() == &m_buttonBuyDesign)
-          {
-            m_menu = 3;
-          }
-          else if (be.getSource() == &m_buttonEquipCannonBalls)
-          {
-            m_menu = 4;
-          }
-          else if (be.getSource() == &m_buttonEquipCannons)
-          {
-            m_menu = 5;
-          }
-          else if (be.getSource() == &m_buttonEquipDesign)
-          {
-            m_menu = 6;
-          }
-          else if (be.getSource() == &m_buttonExitGame)
-          {
-            m_menu = 7;
-          }
-		  else
-		  {
-            std::cout << "Unknown button" << std::endl;
-		  }
-         //std::cout << "Menu: " << m_menu << std::endl;
-		 std::cout << "Le button à l'addresse " << be.getSource() << " a été cliqué" << std::endl;
+		if (be.getSource() == &m_buttonAccueil)
+		{
+		    m_menu = 0;
+        }
+		else if (be.getSource() == &m_buttonBuyCannonballs)
+		{
+		    m_menu = 1;
+		}
+		else if (be.getSource() == &m_buttonBuyCannons)
+		{
+		    m_menu = 2;
+		}
+		else if (be.getSource() == &m_buttonBuyDesign)
+		{
+		    m_menu = 3;
+		}
+		else if (be.getSource() == &m_buttonEquipCannonBalls)
+		{
+		    m_menu = 4;
+		}
+		else if (be.getSource() == &m_buttonEquipCannons)
+		{
+		    m_menu = 5;
+		}
+		else if (be.getSource() == &m_buttonEquipDesign)
+		{
+		    m_menu = 6;
+		}
+		else if (be.getSource() == &m_buttonExitGame)
+		{
+		    m_menu = 7;
+		}
+		else
+		{
+		    std::cout << "Unknown button" << std::endl;
+		}
 	}
 }
 

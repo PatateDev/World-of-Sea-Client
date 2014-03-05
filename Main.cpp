@@ -14,7 +14,7 @@ int main(int argc, char*argv[])
     menuTrade.setLabelDescriptionText("Description");
     menuTrade.setLabelNameText("Wooden Ammo");
     menuTrade.setLabelTextfieldText("Textfield");
-    menuTrade.setLabelImageTexture("resources/sprites/boulet bois.jpg");
+    menuTrade.setLabelBackgroundTexture("resources/sprites/Boulet bois.jpg");
 
     menuTrade.setButtonTexture("resources/sprites/Bouton buy cannonballs.png");
     menuTrade.setButtonTextureFocused("resources/sprites/Bouton buy cannonballs focus.png");
