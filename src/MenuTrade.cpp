@@ -4,9 +4,7 @@ MenuTrade::MenuTrade()
 :Menu(sf::Sprite()),
 m_buttonBuy(m_buttonTexture, m_buttonTextureFocused, m_buttonTextureFocused),
 m_textfield(m_textfieldTexture, m_textfieldTextureFocus, m_font, ""),
-m_labelDescription(),
-m_labelName(),
-m_labelTextfield()
+m_labelName()
 {
     m_textfield.setModel(new sf::ui::NumericTextFieldModel());
     m_textfield.setCanBeEmpty(true);
@@ -14,12 +12,12 @@ m_labelTextfield()
     m_textfield.setFontSize(30);
     m_textfield.setMaxLength(10);
 
-    m_labelImage.setTexture(m_labelImageTexture);
-    setLabelBackgroundTexture("resources/sprites/Background trade.png");
 
-    m_labelTextfield.setFontColor(sf::Color::Black);
-    m_labelDescription.setFontColor(sf::Color::Black);
-    m_labelName.setFontColor(sf::Color::Black);
+
+    sf::Color marron(150, 150, 150);
+
+    m_labelDescription.setFontColor(marron);
+    m_labelName.setFontColor(marron);
 
     m_labelDescription.setFontSize(20);
 }
@@ -31,10 +29,8 @@ void MenuTrade::update(sf::Event const &event)
     m_textfield.updateEvent(event);
 
     m_labelName.updateEvent(event);
-    m_labelTextfield.updateEvent(event);
     m_labelDescription.updateEvent(event);
     m_labelImage.updateEvent(event);
-    m_labelBackground.updateEvent(event);
 }
 
 void MenuTrade::onComponentEvent(const sf::ui::ComponentEvent &event)
@@ -59,15 +55,11 @@ void MenuTrade::onComponentEvent(const sf::ui::ComponentEvent &event)
 
 void MenuTrade::render(sf::RenderTarget &target)
 {
-    target.draw(m_labelBackground);
-
+    target.draw(m_labelImage);
     target.draw(m_buttonBuy);
 
     target.draw(m_labelDescription);
     target.draw(m_labelName);
-    target.draw(m_labelTextfield);
-    target.draw(m_labelImage);
-
 
     target.draw(m_textfield);
 }
@@ -122,11 +114,6 @@ void MenuTrade::setTextfieldTextureFocused(sf::String link)
 
 // LABEL TEXT
 
-void MenuTrade::setLabelTextfieldText(sf::String text)
-{
-    m_labelTextfield.setText(text);
-}
-
 void MenuTrade::setLabelDescriptionText(sf::String text)
 {
     m_labelDescription.setText(text);
@@ -150,17 +137,6 @@ void MenuTrade::setLabelImageTexture(sf::String link)
     m_labelImage.setTexture(m_labelImageTexture);
 }
 
-void MenuTrade::setLabelBackgroundTexture(sf::Texture texture)
-{
-    m_labelImageBackground = texture;
-    m_labelBackground.setTexture(m_labelImageBackground);
-}
-
-void MenuTrade::setLabelBackgroundTexture(sf::String link)
-{
-    m_labelImageBackground.loadFromFile(link);
-    m_labelBackground.setTexture(m_labelImageBackground);
-}
 
 // LABEL FONT
 
@@ -170,7 +146,7 @@ void MenuTrade::setFont(sf::Font font)
 
     m_labelName.setFont(m_font);
     m_labelDescription.setFont(m_font);
-    m_labelTextfield.setFont(m_font);
+    m_textfield.setFont(m_font);
 }
 
 void MenuTrade::setFont(sf::String link)
@@ -179,7 +155,6 @@ void MenuTrade::setFont(sf::String link)
 
     m_labelName.setFont(m_font);
     m_labelDescription.setFont(m_font);
-    m_labelTextfield.setFont(m_font);
 
     m_textfield.setFont(m_font);
 }
@@ -191,31 +166,20 @@ int MenuTrade::getValue()
 
 // POSITION
 
-void MenuTrade::setPosition(int x, int y)
-{
-    m_x = x;
-    m_y = y;
-
+ void MenuTrade::setPosition(int x, int y)
+ {
     m_buttonBuy.setPosition(x, y);
-
     m_textfield.setPosition(x, y);
-
     m_labelDescription.setPosition(x, y);
     m_labelName.setPosition(x, y);
-    m_labelTextfield.setPosition(x, y);
     m_labelImage.setPosition(x, y);
-    m_labelBackground.setPosition(x, y);
 
     m_buttonBuy.move(m_textfield.getSize().x, m_labelImage.getSize().y);
-
-    m_textfield.move(m_labelTextfield.getSize().x, m_labelImage.getSize().y);
-
-    m_labelDescription.move(m_labelImage.getSize().x + 5, 50);
-    m_labelName.move(0, 0);
-    m_labelTextfield.move(0 ,m_labelImage.getSize().y);
-    m_labelImage.move(0, 50);
-
-}
+    m_textfield.move(0, m_labelImage.getSize().y);
+    m_labelDescription.move(m_labelImage.getSize().x/2, 50);
+    m_labelName.move(50, 0);
+    m_labelImage.move(0, 0);
+ }
 
 MenuTrade::~MenuTrade()
 {

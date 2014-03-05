@@ -9,6 +9,7 @@ int main(int argc, char*argv[])
     MenuBar menuBar;
     MenuBuyCannonballs menuBuyCannonballs;
     MenuTrade menuTrade;
+    Ship myShip;
 
     /*menuTrade.setFont("resources/fonts/arial.ttf");
     menuTrade.setLabelDescriptionText("Description");

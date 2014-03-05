@@ -2,8 +2,9 @@
 #define MENUBUYCANNONBALLS_H
 
 #include "MenuTrade.h"
+#include "ShipHandler.h"
 
-class MenuBuyCannonballs : public Menu, public sf::ui::ComponentObserver
+class MenuBuyCannonballs : public Menu, public sf::ui::ComponentObserver, public ShipHandler
 {
     public:
         MenuBuyCannonballs();

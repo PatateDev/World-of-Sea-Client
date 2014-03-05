@@ -63,13 +63,13 @@ m_buttonExitGame(m_buttonImgExitGame, m_buttonFocImgExitGame, m_buttonFocImgExit
 
     m_buttonBuyCannonballs.setPosition(0, 56+ 56);
     m_buttonBuyCannons.setPosition(0, 112+ 56);
-    m_buttonBuyDesign.setPosition(0, 158+ 56);
+    m_buttonBuyDesign.setPosition(0, 168+ 56);
 
-    m_buttonEquipCannonBalls.setPosition(0, 214+ 56+ 56);
-    m_buttonEquipCannons.setPosition(0, 270+ 56+ 56);
-    m_buttonEquipDesign.setPosition(0, 326+ 56+ 56);
+    m_buttonEquipCannonBalls.setPosition(0, 224+ 56+ 56);
+    m_buttonEquipCannons.setPosition(0, 280+ 56+ 56);
+    m_buttonEquipDesign.setPosition(0, 336+ 56+ 56);
 
-    m_buttonExitGame.setPosition(0, 382 + 56+ 56+ 56);
+    m_buttonExitGame.setPosition(0, 392 + 56+ 56+ 56);
 
 	m_backgroundTexture.loadFromFile("resources/sprites/Background.bmp");
 	m_labelBackground.setTexture(m_backgroundTexture);

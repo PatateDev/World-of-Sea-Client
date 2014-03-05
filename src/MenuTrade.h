@@ -20,13 +20,10 @@ class MenuTrade : public Menu, public sf::ui::ComponentObserver
         void setTextfieldTextureFocused(sf::Texture texture);
         void setTextfieldTextureFocused(sf::String link);
 
-        void setLabelTextfieldText(sf::String text);
         void setLabelDescriptionText(sf::String text);
         void setLabelNameText(sf::String text);
         void setLabelImageTexture(sf::Texture texture);
         void setLabelImageTexture(sf::String link);
-        void setLabelBackgroundTexture(sf::Texture texture);
-        void setLabelBackgroundTexture(sf::String link);
 
         void setFont(sf::Font font);
         void setFont(sf::String link);
@@ -44,19 +41,15 @@ class MenuTrade : public Menu, public sf::ui::ComponentObserver
     protected:
     private:
         int m_value;
-        int m_x, m_y;
 
         sf::ui::Button m_buttonBuy;
         sf::Texture m_buttonTexture;
         sf::Texture m_buttonTextureFocused;
 
-        sf::ui::Label m_labelTextfield;
         sf::ui::Label m_labelDescription;
         sf::ui::Label m_labelName;
         sf::ui::Label m_labelImage;
-        sf::ui::Label m_labelBackground;
         sf::Texture m_labelImageTexture;
-        sf::Texture m_labelImageBackground;
 
 
         sf::ui::TextField m_textfield;
