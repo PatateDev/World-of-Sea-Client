@@ -1,4 +1,4 @@
-#include "../include/Cannon.h"
+#include "Cannon.h"
 
 Cannon::Cannon()
 : m_type("NULL"), m_nbCannon(0)

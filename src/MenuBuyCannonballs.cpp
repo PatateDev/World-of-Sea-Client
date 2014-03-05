@@ -5,18 +5,18 @@ MenuBuyCannonballs::MenuBuyCannonballs()
 {
     menuTrade.setFont("resources/fonts/arial.ttf");
 
-    menuTrade.setLabelDescriptionText("Description\Damage\nWeight");
+    menuTrade.setLabelDescriptionText("Description\nDamage\nWeight");
     menuTrade.setLabelNameText("Wooden Ammo");
     menuTrade.setLabelTextfieldText("Textfield");
-    menuTrade.setLabelImageTexture("resources/sprites/boulet bois2.png");
+    menuTrade.setLabelImageTexture("resources/sprites/Boulet bois2.png");
 
-    menuTrade.setButtonTexture("resources/sprites/Bouton buy2.png");
-    menuTrade.setButtonTextureFocused("resources/sprites/Bouton buy focus2.png");
+    menuTrade.setButtonTexture("resources/sprites/Bouton Buy2.png");
+    menuTrade.setButtonTextureFocused("resources/sprites/Bouton Buy focus2.png");
 
     menuTrade.setTextfieldTexture("resources/sprites/textfield.png");
     menuTrade.setTextfieldTextureFocused("resources/sprites/textfieldFocus.png");
 
-    menuTrade.setBackgroundTexture("resources/sprites/background Trade.png");
+    menuTrade.setBackgroundTexture("resources/sprites/Background trade.png");
 
     menuTrade.setPosition(400, 200);
 }
