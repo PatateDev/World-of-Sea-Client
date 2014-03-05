@@ -99,7 +99,7 @@ void MenuBar::onComponentEvent(const sf::ui::ComponentEvent &event)
 		if (be.getSource() == &m_buttonAccueil)
 		{
 		    m_menu = 0;
-        }
+		}
 		else if (be.getSource() == &m_buttonBuyCannonballs)
 		{
 		    m_menu = 1;
