@@ -19,3 +19,7 @@
 *.cscope_file_list
 bin
 obj
+build
+
+# Temporary files
+*~
