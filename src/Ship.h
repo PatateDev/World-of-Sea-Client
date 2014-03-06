@@ -27,6 +27,7 @@ class Ship
         void setDesign(std::string name);
         void setHp(int hp);
         void setMaxCannon(int nb);
+        void setGolds(int gold);
 
         void delCannon(Cannon cannon);
 
@@ -39,6 +40,8 @@ class Ship
         std::string getDesignName();
         int getHp();
         int getMaxCannon();
+        int getGolds();
+        sf::String getStrGolds();
 
         virtual ~Ship();
     protected:

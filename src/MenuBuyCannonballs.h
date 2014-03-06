@@ -3,6 +3,7 @@
 
 #include "MenuTrade.h"
 #include "ShipHandler.h"
+#include "../Config.h"
 
 class MenuBuyCannonballs : public Menu, public sf::ui::ComponentObserver, public ShipHandler
 {
@@ -20,6 +21,8 @@ class MenuBuyCannonballs : public Menu, public sf::ui::ComponentObserver, public
     private:
         MenuTrade m_menuWoodenCannonballs;
         MenuTrade m_menuStoneCannonballs;
+        MenuTrade m_menuCobbleStoneCannonballs;
+        MenuTrade m_menuMetalCannonballs;
 };
 
 #endif // MENUBUYCANNONBALLS_H

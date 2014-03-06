@@ -6,12 +6,16 @@ int main(int argc, char*argv[])
     // DECLARATION
     sf::RenderWindow window(sf::VideoMode(LAUNCHER_WIDTH_X, LAUNCHER_HEIGHT_Y), "World of Sea v0", sf::Style::Close | sf::Style::Titlebar);
     sf::Event event;
+
+    Ship myShip;
     MenuBar menuBar;
     MenuBuyCannonballs menuBuyCannonballs;
     MenuTrade menuTrade;
-    Ship myShip;
 
+    // INITIALISATION
+    myShip.setGolds(1000000);
     menuBuyCannonballs.setShip(myShip);
+    menuBar.setShip(myShip);
 
 
 

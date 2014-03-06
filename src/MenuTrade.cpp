@@ -4,13 +4,15 @@ MenuTrade::MenuTrade()
 :Menu(sf::Sprite()),
 m_buttonBuy(m_buttonTexture, m_buttonTextureFocused, m_buttonTextureFocused),
 m_textfield(m_textfieldTexture, m_textfieldTextureFocus, m_font, ""),
-m_labelName()
+m_labelName(),
+m_value(0)
 {
     m_textfield.setModel(new sf::ui::NumericTextFieldModel());
     m_textfield.setCanBeEmpty(true);
     m_textfield.setFontColor(sf::Color::Black);
     m_textfield.setFontSize(30);
     m_textfield.setMaxLength(10);
+
 
 
 
@@ -51,7 +53,7 @@ void MenuTrade::onComponentEvent(const sf::ui::ComponentEvent &event)
             std::cout << "Unknown button" << std::endl;
 		  }
          //std::cout << "Menu: " << m_menu << std::endl;
-		 std::cout << "Le button a l'addresse " << be.getSource() << " a ete clique" << std::endl;
+		 //std::cout << "Le button a l'addresse " << be.getSource() << " a ete clique" << std::endl;
 	}
 }
 

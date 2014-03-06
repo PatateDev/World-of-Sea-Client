@@ -20,14 +20,17 @@ void Ship::addCannonballs(Cannonballs ammo)
         for (a = 0; m_ammoArray[a].getType() != "NULL"; a++ );
 
         m_ammoArray[a] = ammo;
+        std::cout << "Ammo created." << std::endl;
+        i = a;
     }
     else
     {
-        std::cout << "Array: " << m_ammoArray[a].getAmmo() << std::endl;
+        std::cout << "Default: " << ammo.getAmmo() << std::endl;
+        std::cout << "Array: " << m_ammoArray[i].getAmmo() << std::endl;
         m_ammoArray[i].addAmmo(ammo.getAmmo());
     }
 
-    std::cout << "Ship::addCannonballs, Ammo " << ammo.getType() << " has been added. x"<< m_ammoArray[a].getAmmo() << std::endl;
+    std::cout << "Ship::addCannonballs, " << ammo.getType() << " has been added. x"<< m_ammoArray[i].getAmmo() << std::endl;
 }
 
 void Ship::addCannon(Cannon cannon)
@@ -259,6 +262,11 @@ void Ship::delCannon(Cannon cannon)
     }
 }
 
+void Ship::setGolds(int golds)
+{
+    m_golds = golds;
+}
+
 Cannonballs Ship::getCannonballs()
 {
     return m_ammoArray[m_ammoEquiped];
@@ -287,6 +295,19 @@ int Ship::getHp()
 int Ship::getMaxCannon()
 {
     return m_maxCannon;
+}
+
+int Ship::getGolds()
+{
+    return m_golds;
+}
+
+sf::String Ship::getStrGolds()
+{
+    std::ostringstream oss;
+    oss << m_golds;
+    // TODO SEARCH CONVERT INT TO STR
+    return oss.str();
 }
 
 Ship::~Ship()

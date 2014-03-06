@@ -2,8 +2,9 @@
 #define MENUBAR_H
 
 #include "Menu.h"
+#include "ShipHandler.h"
 
-class MenuBar : public Menu, public sf::ui::ComponentObserver
+class MenuBar : public Menu, public sf::ui::ComponentObserver, public ShipHandler
 {
     public:
         MenuBar();
@@ -53,8 +54,11 @@ class MenuBar : public Menu, public sf::ui::ComponentObserver
     sf::ui::Button m_buttonExitGame;
     //
     sf::ui::Label m_labelBackground;
+    sf::ui::Label m_labelGolds;
 
     sf::Texture m_textureBackground;
+    sf::Font m_font;
+
 };
 
 #endif // MENUBAR_H

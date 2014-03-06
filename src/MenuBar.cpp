@@ -12,6 +12,15 @@ m_buttonEquipCannons(m_buttonImgEquipCannons, m_buttonFocImgEquipCannons, m_butt
 m_buttonEquipDesign(m_buttonImgEquipDesigns, m_buttonFocImgEquipDesigns, m_buttonFocImgEquipDesigns),
 m_buttonExitGame(m_buttonImgExitGame, m_buttonFocImgExitGame, m_buttonFocImgExitGame)
 {
+    m_font.loadFromFile("resources/fonts/Pieces of Eight.ttf");
+
+    sf::Color yellow(180, 180, 0);
+
+    m_labelGolds.setFont(m_font);
+    m_labelGolds.setFontColor(yellow);
+    m_labelGolds.setPosition(600, 0);
+    m_labelGolds.setFontSize(60);
+
     m_buttonImgAccueil.loadFromFile("resources/sprites/Bouton Home.png");
     m_buttonFocImgAccueil.loadFromFile("resources/sprites/Bouton Home focus.png");
     m_buttonFirImgAccueil.loadFromFile("resources/sprites/Bouton Home focus.png");
@@ -88,6 +97,8 @@ void MenuBar::update(sf::Event const &event)
     m_buttonEquipCannons.updateEvent(event);
     m_buttonEquipDesign.updateEvent(event);
     m_buttonExitGame.updateEvent(event);
+
+    m_labelGolds.updateEvent(event);
 }
 
 void MenuBar::onComponentEvent(const sf::ui::ComponentEvent &event)
@@ -147,6 +158,9 @@ void MenuBar::render(sf::RenderTarget &target)
     target.draw(m_buttonEquipCannons);
     target.draw(m_buttonEquipDesign);
     target.draw(m_buttonExitGame);
+
+    m_labelGolds.setText(m_ship->getStrGolds());
+    target.draw(m_labelGolds);
 }
 
 int MenuBar::getMenu()
