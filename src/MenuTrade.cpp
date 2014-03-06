@@ -19,6 +19,8 @@ m_labelName()
     m_labelDescription.setFontColor(marron);
     m_labelName.setFontColor(marron);
 
+    m_buttonBuy.addObserver(this);
+
     m_labelDescription.setFontSize(20);
 }
 
@@ -49,7 +51,7 @@ void MenuTrade::onComponentEvent(const sf::ui::ComponentEvent &event)
             std::cout << "Unknown button" << std::endl;
 		  }
          //std::cout << "Menu: " << m_menu << std::endl;
-		 std::cout << "Le button a l'addresse " << be.getSource() << " a été cliqué" << std::endl;
+		 std::cout << "Le button a l'addresse " << be.getSource() << " a ete clique" << std::endl;
 	}
 }
 
@@ -164,6 +166,11 @@ int MenuTrade::getValue()
     return m_value;
 }
 
+void MenuTrade::resetValue()
+{
+    m_value = 0;
+}
+
 // POSITION
 
  void MenuTrade::setPosition(int x, int y)
@@ -174,8 +181,8 @@ int MenuTrade::getValue()
     m_labelName.setPosition(x, y);
     m_labelImage.setPosition(x, y);
 
-    m_buttonBuy.move(m_textfield.getSize().x, m_labelImage.getSize().y);
-    m_textfield.move(0, m_labelImage.getSize().y);
+    m_buttonBuy.move(m_textfield.getSize().x, 203);
+    m_textfield.move(0, 203);
     m_labelDescription.move(m_labelImage.getSize().x/2, 50);
     m_labelName.move(50, 0);
     m_labelImage.move(0, 0);

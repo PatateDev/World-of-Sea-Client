@@ -11,19 +11,7 @@ int main(int argc, char*argv[])
     MenuTrade menuTrade;
     Ship myShip;
 
-    /*menuTrade.setFont("resources/fonts/arial.ttf");
-    menuTrade.setLabelDescriptionText("Description");
-    menuTrade.setLabelNameText("Wooden Ammo");
-    menuTrade.setLabelTextfieldText("Textfield");
-    menuTrade.setLabelImageTexture("resources/sprites/Boulet bois.jpg");
-
-    menuTrade.setButtonTexture("resources/sprites/Bouton buy cannonballs.png");
-    menuTrade.setButtonTextureFocused("resources/sprites/Bouton buy cannonballs focus.png");
-
-    menuTrade.setTextfieldTexture("resources/sprites/textfield.png");
-    menuTrade.setTextfieldTextureFocused("resources/sprites/textfieldFocus.png");
-
-    menuTrade.setPosition(200, 200);*/
+    menuBuyCannonballs.setShip(myShip);
 
 
 

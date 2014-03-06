@@ -18,7 +18,8 @@ class MenuBuyCannonballs : public Menu, public sf::ui::ComponentObserver, public
         virtual ~MenuBuyCannonballs();
     protected:
     private:
-        MenuTrade menuTrade;
+        MenuTrade m_menuWoodenCannonballs;
+        MenuTrade m_menuStoneCannonballs;
 };
 
 #endif // MENUBUYCANNONBALLS_H

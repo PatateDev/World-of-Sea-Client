@@ -29,6 +29,7 @@ class MenuTrade : public Menu, public sf::ui::ComponentObserver
         void setFont(sf::String link);
 
         int getValue();
+        void resetValue();
 
         //
         virtual void update(sf::Event const &event);

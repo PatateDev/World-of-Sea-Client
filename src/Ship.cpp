@@ -23,6 +23,7 @@ void Ship::addCannonballs(Cannonballs ammo)
     }
     else
     {
+        std::cout << "Array: " << m_ammoArray[a].getAmmo() << std::endl;
         m_ammoArray[i].addAmmo(ammo.getAmmo());
     }
 
