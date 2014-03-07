@@ -10,12 +10,14 @@ int main(int argc, char*argv[])
     Ship myShip;
     MenuBar menuBar;
     MenuBuyCannonballs menuBuyCannonballs;
-    MenuTrade menuTrade;
+    MenuBuyCannons menuBuyCannons;
 
     // INITIALISATION
     myShip.setGolds(1000000);
-    menuBuyCannonballs.setShip(myShip);
+
     menuBar.setShip(myShip);
+    menuBuyCannonballs.setShip(myShip);
+    menuBuyCannons.setShip(myShip);
 
 
 
@@ -29,10 +31,8 @@ int main(int argc, char*argv[])
         menuBar.update(event);
 
         window.clear(sf::Color::White);
-
         menuBar.render(window);
-        //menuTrade.update(event);
-        //menuTrade.render(window);
+
         switch (menuBar.getMenu())
         {
         case 0:
@@ -42,6 +42,8 @@ int main(int argc, char*argv[])
             menuBuyCannonballs.render(window);
             break;
         case 2:
+            menuBuyCannons.update(event);
+            menuBuyCannons.render(window);
             break;
         case 7:
             window.close();

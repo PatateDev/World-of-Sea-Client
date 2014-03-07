@@ -8,6 +8,7 @@
 #include "src/Menu.h"
 #include "src/MenuBar.h"
 #include "src/MenuBuyCannonballs.h"
+#include "src/MenuBuyCannons.h"
 #include "src/MenuTrade.h"
 #include "src/Ship.h"
 

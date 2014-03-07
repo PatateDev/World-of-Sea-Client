@@ -48,12 +48,14 @@ void Ship::addCannon(Cannon cannon)
         for (a = 0; m_cannonArray[a].getType() != "NULL"; a++ );
 
         m_cannonArray[a] = cannon;
+        i = a;
     }
     else
     {
+        std::cout << "i: " << i << " nbToAdd: " << cannon.getNbCannon() << " Actual: " << m_cannonArray[i].getNbCannon() << std::endl;
         m_cannonArray[i].addCannon(cannon.getNbCannon());
     }
-    std::cout << "Ship::addCannons, Cannons " << cannon.getType() << " has been added. x"<< m_cannonArray[a].getNbCannon() << std::endl;
+    std::cout << "Ship::addCannons, Cannons " << cannon.getType() << " has been added. x"<< m_cannonArray[i].getNbCannon() << std::endl;
 }
 
 void Ship::addDesign(Design design)
@@ -306,7 +308,6 @@ sf::String Ship::getStrGolds()
 {
     std::ostringstream oss;
     oss << m_golds;
-    // TODO SEARCH CONVERT INT TO STR
     return oss.str();
 }
 

@@ -7,6 +7,8 @@
 #include <cstdlib>
 #include <sstream>
 
+#include "Config.h"
+
 #define LAUNCHER_WIDTH_X 1280
 #define LAUNCHER_HEIGHT_Y 800
 
