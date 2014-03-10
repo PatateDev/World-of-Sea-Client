@@ -133,63 +133,67 @@ void Ship::setCannonballs(std::string type)
 
 void Ship::setCannonEquiped(Cannon cannon)
 {
-    int i, j, a;
+    int i, j, a, b;
     int actualCannon = 0;
     int overage = 0;
+    bool haveCannon = false;
 
-    for (j = 0; (m_cannonEquipedArray[j].getType() != cannon.getType()) && (j < MAX_CANNON); j++);
-    //std::cout << "j: " << j << std::endl;
-
-    for (a = 0; a <= i; a++)
+    for (b = 0; (m_cannonArray[b].getType() != cannon.getType()) && (b < MAX_CANNON); b++);
+    //std::cout << "NB CANNON ARRAY: " << m_cannonArray[b].getNbCannon() << " " << m_cannonArray[b].getType() << std::endl;
+    if ((b != MAX_CANNON) && (m_cannonArray[b].getNbCannon() >= cannon.getNbCannon()))
     {
-            actualCannon += m_cannonEquipedArray[a].getNbCannon();
-    }
-    //std::cout << "ActualCannon: " << actualCannon << std::endl;
+        for (j = 0; (m_cannonEquipedArray[j].getType() != cannon.getType()) && (j < MAX_CANNON); j++);
+        //std::cout << "j: " << j << std::endl;
 
-    if (j == MAX_CANNON)
-    {
-        for (i = 0; m_cannonEquipedArray[i].getType() != "NULL"; i++);
-
-
-        if ((actualCannon + cannon.getNbCannon()) <= m_maxCannon)
+        for (a = 0; a <= i; a++)
         {
-            m_cannonEquipedArray[i] = cannon;
-            std::cout << "Ship::setCannonEquiped, You equiped " << m_cannonArray[i].getType() << " x" << m_cannonArray[i].getNbCannon() << "." << std::endl;
+                actualCannon += m_cannonEquipedArray[a].getNbCannon();
+        }
+        //std::cout << "ActualCannon: " << actualCannon << std::endl;
+
+        if (j == MAX_CANNON)
+        {
+            for (i = 0; m_cannonEquipedArray[i].getType() != "NULL"; i++);
+
+
+            if ((actualCannon + cannon.getNbCannon()) <= m_maxCannon)
+            {
+                m_cannonEquipedArray[i] = cannon;
+                std::cout << "Ship::setCannonEquiped, You equiped " << m_cannonArray[i].getType() << " x" << m_cannonArray[i].getNbCannon() << "." << std::endl;
+            }
+            else
+            {
+                overage = (actualCannon + cannon.getNbCannon()) - m_maxCannon;
+                cannon.delCannon(overage);
+                m_cannonEquipedArray[i] = cannon;
+                std::cout << "Ship::setCannonEquiped, You can't add more cannon than " << m_maxCannon << ", " << overage << " cannons were disabled." << std::endl;
+            }
         }
         else
         {
-            overage = (actualCannon + cannon.getNbCannon()) - m_maxCannon;
-            cannon.delCannon(overage);
-            m_cannonEquipedArray[i] = cannon;
-            std::cout << "Ship::setCannonEquiped, You can't add more cannon than " << m_maxCannon << ", " << overage << " cannons were disabled." << std::endl;
+            if ((actualCannon + cannon.getNbCannon()) <= m_maxCannon)
+            {
+                m_cannonEquipedArray[i].addCannon(cannon.getNbCannon());
+                std::cout << "Ship::setCannonEquiped, You equiped " << m_cannonArray[i].getType() << " x" << cannon.getNbCannon() << "." << std::endl;
+            }
+            else
+            {
+                overage = (actualCannon + cannon.getNbCannon()) - m_maxCannon;
+                cannon.delCannon(overage);
+                m_cannonEquipedArray[j].addCannon(cannon.getNbCannon());
+                std::cout << "Ship::setCannonEquiped, You can't add more cannon than " << m_maxCannon << ", " << overage << " cannons were disabled." << std::endl;
+            }
         }
-    }
-    else
-    {
 
-        if ((actualCannon + cannon.getNbCannon()) <= m_maxCannon)
+        actualCannon = 0;
+        for (a = 0; a <= i; a++)
         {
-            m_cannonEquipedArray[i].addCannon(cannon.getNbCannon());
-            std::cout << "Ship::setCannonEquiped, You equiped " << m_cannonArray[i].getType() << " x" << m_cannonArray[i].getNbCannon() << "." << std::endl;
-        }
-        else
-        {
-            overage = (actualCannon + cannon.getNbCannon()) - m_maxCannon;
-            cannon.delCannon(overage);
-            m_cannonEquipedArray[j].addCannon(cannon.getNbCannon());
-            std::cout << "Ship::setCannonEquiped, You can't add more cannon than " << m_maxCannon << ", " << overage << " cannons were disabled." << std::endl;
-        }
-    }
-
-    actualCannon = 0;
-    for (a = 0; a <= i; a++)
-    {
             actualCannon += m_cannonEquipedArray[a].getNbCannon();
             std::cout << "Ship::setCannonEquiped, Finnaly you have " << m_cannonEquipedArray[a].getType() << " x" << m_cannonEquipedArray[a].getNbCannon() << "." << std::endl;
-    }
+        }
 
-    cannon.setCannon(overage);
-    this->addCannon(cannon);
+        m_cannonArray[b].delCannon(cannon.getNbCannon());
+    }
 }
 
 void Ship::setDesign(Design design)

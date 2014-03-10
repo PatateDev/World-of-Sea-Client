@@ -2,16 +2,16 @@
 
 MenuEquipCannonballs::MenuEquipCannonballs()
 {
-    m_woodenMenu.setTexture("resources/sprites/Boulet bois equip.png");
+    m_woodenMenu.setTexture(MENU_EQUIP_CANNONBALLS_WOODEN);
     m_woodenMenu.setPosition(350, 100);
 
-    m_stoneMenu.setTexture("resources/sprites/Boulet pierre equip.png");
+    m_stoneMenu.setTexture(MENU_EQUIP_CANNONBALLS_STONE);
     m_stoneMenu.setPosition(650, 100);
 
-    m_cobbleStoneMenu.setTexture("resources/sprites/Boulet beton equip.png");
+    m_cobbleStoneMenu.setTexture(MENU_EQUIP_CANNONBALLS_COBBLESTONE);
     m_cobbleStoneMenu.setPosition(950, 100);
 
-    m_metalMenu.setTexture("resources/sprites/Boulet metal equip.png");
+    m_metalMenu.setTexture(MENU_EQUIP_CANNONBALLS_METAL);
     m_metalMenu.setPosition(350, 400);
 }
 
@@ -30,6 +30,7 @@ void MenuEquipCannonballs::update(sf::Event const &event)
     else if (m_stoneMenu.getValue())
     {
         m_ship->setCannonballs("Stone Ammo");
+
         m_stoneMenu.resetValue();
     }
     else if (m_cobbleStoneMenu.getValue())

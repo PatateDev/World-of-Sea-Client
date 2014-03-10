@@ -2,24 +2,24 @@
 
 MenuBuyCannons::MenuBuyCannons()
 {
-    m_lightCannon.setFont("resources/fonts/Pieces of Eight.ttf");
+    m_lightCannon.setFont(POLICE_PIECES_OF_EIGHT);
     m_lightCannon.setLabelDescriptionText("\n\nDescription\nDamage\nWeight\n$");
     m_lightCannon.setLabelNameText("Light Cannon");
-    m_lightCannon.setLabelImageTexture("resources/sprites/lightCannon.png");
-    m_lightCannon.setButtonTexture("resources/sprites/Bouton Buy2.png");
-    m_lightCannon.setButtonTextureFocused("resources/sprites/Bouton Buy2 focus.png");
-    m_lightCannon.setTextfieldTexture("resources/sprites/textfield.png");
-    m_lightCannon.setTextfieldTextureFocused("resources/sprites/textfieldFocus.png");
+    m_lightCannon.setLabelImageTexture(MENU_BUYCANNONS_LIGHTCANNONS);
+    m_lightCannon.setButtonTexture(MENU_BUTTON_BUY);
+    m_lightCannon.setButtonTextureFocused(MENU_BUTTON_BUYFOCUS);
+    m_lightCannon.setTextfieldTexture(MENU_TEXTFIELD1);
+    m_lightCannon.setTextfieldTextureFocused(MENU_TEXTFIELDFOCUS1);
     m_lightCannon.setPosition(350, 100);
 
-    m_heavyCannon.setFont("resources/fonts/Pieces of Eight.ttf");
+    m_heavyCannon.setFont(POLICE_PIECES_OF_EIGHT);
     m_heavyCannon.setLabelDescriptionText("\n\nDescription\nDamage\nWeight\n$");
     m_heavyCannon.setLabelNameText("Heavy Cannon");
-    m_heavyCannon.setLabelImageTexture("resources/sprites/heavyCannon.png");
-    m_heavyCannon.setButtonTexture("resources/sprites/Bouton Buy2.png");
-    m_heavyCannon.setButtonTextureFocused("resources/sprites/Bouton Buy2 focus.png");
-    m_heavyCannon.setTextfieldTexture("resources/sprites/textfield.png");
-    m_heavyCannon.setTextfieldTextureFocused("resources/sprites/textfieldFocus.png");
+    m_heavyCannon.setLabelImageTexture(MENU_BUYCANNONS_HEAVYCANNONS);
+    m_heavyCannon.setButtonTexture(MENU_BUTTON_BUY);
+    m_heavyCannon.setButtonTextureFocused(MENU_BUTTON_BUYFOCUS);
+    m_heavyCannon.setTextfieldTexture(MENU_TEXTFIELD1);
+    m_heavyCannon.setTextfieldTextureFocused(MENU_TEXTFIELDFOCUS1);
     m_heavyCannon.setPosition(800, 100);
 }
 

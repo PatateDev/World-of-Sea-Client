@@ -7,8 +7,8 @@ m_value(0)
 {
     m_button.addObserver(this);
 
-    m_textureButton.loadFromFile("resources/sprites/Bouton Equip2.png");
-    m_textureButtonFocus.loadFromFile("resources/sprites/Bouton Equip2 focus.png");
+    m_textureButton.loadFromFile(MENU_BUTTON_EQUIP);
+    m_textureButtonFocus.loadFromFile(MENU_BUTTON_EQUIPFOCUS);
 
     m_button.updateSize();
 }

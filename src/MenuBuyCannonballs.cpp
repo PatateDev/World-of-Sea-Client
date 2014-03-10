@@ -3,44 +3,44 @@
 MenuBuyCannonballs::MenuBuyCannonballs()
 :Menu(sf::Sprite())
 {
-    m_menuWoodenCannonballs.setFont("resources/fonts/Pieces of Eight.ttf");
+    m_menuWoodenCannonballs.setFont(POLICE_PIECES_OF_EIGHT);
     m_menuWoodenCannonballs.setLabelDescriptionText("\n\nDescription\nDamage\nWeight\n$");
     m_menuWoodenCannonballs.setLabelNameText("Wooden Ammo");
-    m_menuWoodenCannonballs.setLabelImageTexture("resources/sprites/Boulet bois3.png");
-    m_menuWoodenCannonballs.setButtonTexture("resources/sprites/Bouton Buy2.png");
-    m_menuWoodenCannonballs.setButtonTextureFocused("resources/sprites/Bouton Buy2 focus.png");
-    m_menuWoodenCannonballs.setTextfieldTexture("resources/sprites/textfield.png");
-    m_menuWoodenCannonballs.setTextfieldTextureFocused("resources/sprites/textfieldFocus.png");
+    m_menuWoodenCannonballs.setLabelImageTexture(MENU_BUYCANNONBALLS_WOODEN_CANNONBALLS);
+    m_menuWoodenCannonballs.setButtonTexture(MENU_BUTTON_BUY);
+    m_menuWoodenCannonballs.setButtonTextureFocused(MENU_BUTTON_BUYFOCUS);
+    m_menuWoodenCannonballs.setTextfieldTexture(MENU_TEXTFIELD1);
+    m_menuWoodenCannonballs.setTextfieldTextureFocused(MENU_TEXTFIELDFOCUS1);
     m_menuWoodenCannonballs.setPosition(350, 100);
 
-    m_menuStoneCannonballs.setFont("resources/fonts/Pieces of Eight.ttf");
+    m_menuStoneCannonballs.setFont(POLICE_PIECES_OF_EIGHT);
     m_menuStoneCannonballs.setLabelDescriptionText("\n\nDescription\nDamage\nWeight\n$");
     m_menuStoneCannonballs.setLabelNameText("Stone Ammo");
-    m_menuStoneCannonballs.setLabelImageTexture("resources/sprites/Boulet pierre2.jpg");
-    m_menuStoneCannonballs.setButtonTexture("resources/sprites/Bouton Buy2.png");
-    m_menuStoneCannonballs.setButtonTextureFocused("resources/sprites/Bouton Buy2 focus.png");
-    m_menuStoneCannonballs.setTextfieldTexture("resources/sprites/textfield.png");
-    m_menuStoneCannonballs.setTextfieldTextureFocused("resources/sprites/textfieldFocus.png");
+    m_menuStoneCannonballs.setLabelImageTexture(MENU_BUYCANNONBALLS_STONE_CANNONBALLS);
+    m_menuStoneCannonballs.setButtonTexture(MENU_BUTTON_BUY);
+    m_menuStoneCannonballs.setButtonTextureFocused(MENU_BUTTON_BUYFOCUS);
+    m_menuStoneCannonballs.setTextfieldTexture(MENU_TEXTFIELD1);
+    m_menuStoneCannonballs.setTextfieldTextureFocused(MENU_TEXTFIELDFOCUS1);
     m_menuStoneCannonballs.setPosition(800, 100);
 
-    m_menuCobbleStoneCannonballs.setFont("resources/fonts/Pieces of Eight.ttf");
+    m_menuCobbleStoneCannonballs.setFont(POLICE_PIECES_OF_EIGHT);
     m_menuCobbleStoneCannonballs.setLabelDescriptionText("\n\nDescription\nDamage\nWeight\n$");
     m_menuCobbleStoneCannonballs.setLabelNameText("CobbleStone Ammo");
-    m_menuCobbleStoneCannonballs.setLabelImageTexture("resources/sprites/Boulet beton2.png");
-    m_menuCobbleStoneCannonballs.setButtonTexture("resources/sprites/Bouton Buy2.png");
-    m_menuCobbleStoneCannonballs.setButtonTextureFocused("resources/sprites/Bouton Buy2 focus.png");
-    m_menuCobbleStoneCannonballs.setTextfieldTexture("resources/sprites/textfield.png");
-    m_menuCobbleStoneCannonballs.setTextfieldTextureFocused("resources/sprites/textfieldFocus.png");
+    m_menuCobbleStoneCannonballs.setLabelImageTexture(MENU_BUYCANNONBALLS_COBBLESTONE_CANNONBALLS);
+    m_menuCobbleStoneCannonballs.setButtonTexture(MENU_BUTTON_BUY);
+    m_menuCobbleStoneCannonballs.setButtonTextureFocused(MENU_BUTTON_BUYFOCUS);
+    m_menuCobbleStoneCannonballs.setTextfieldTexture(MENU_TEXTFIELD1);
+    m_menuCobbleStoneCannonballs.setTextfieldTextureFocused(MENU_TEXTFIELDFOCUS1);
     m_menuCobbleStoneCannonballs.setPosition(350, 400);
 
-    m_menuMetalCannonballs.setFont("resources/fonts/Pieces of Eight.ttf");
+    m_menuMetalCannonballs.setFont(POLICE_PIECES_OF_EIGHT);
     m_menuMetalCannonballs.setLabelDescriptionText("\n\nDescription\nDamage\nWeight\n$");
-    m_menuMetalCannonballs.setLabelNameText("CobbleStone Ammo");
-    m_menuMetalCannonballs.setLabelImageTexture("resources/sprites/Boulet metal2.png");
-    m_menuMetalCannonballs.setButtonTexture("resources/sprites/Bouton Buy2.png");
-    m_menuMetalCannonballs.setButtonTextureFocused("resources/sprites/Bouton Buy2 focus.png");
-    m_menuMetalCannonballs.setTextfieldTexture("resources/sprites/textfield.png");
-    m_menuMetalCannonballs.setTextfieldTextureFocused("resources/sprites/textfieldFocus.png");
+    m_menuMetalCannonballs.setLabelNameText("Metal Ammo");
+    m_menuMetalCannonballs.setLabelImageTexture(MENU_BUYCANNONBALLS_METAL_CANNONBALLS);
+    m_menuMetalCannonballs.setButtonTexture(MENU_BUTTON_BUY);
+    m_menuMetalCannonballs.setButtonTextureFocused(MENU_BUTTON_BUYFOCUS);
+    m_menuMetalCannonballs.setTextfieldTexture(MENU_TEXTFIELD1);
+    m_menuMetalCannonballs.setTextfieldTextureFocused(MENU_TEXTFIELDFOCUS1);
     m_menuMetalCannonballs.setPosition(800, 400);
 }
 

@@ -3,6 +3,7 @@
 
 #include "../Main.h"
 #include "Menu.h"
+#include "../Config.h"
 
 class MenuEquip : public Menu, public sf::ui::ComponentObserver
 {
