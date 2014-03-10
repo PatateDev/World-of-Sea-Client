@@ -11,6 +11,7 @@ int main(int argc, char*argv[])
     MenuBar menuBar;
     MenuBuyCannonballs menuBuyCannonballs;
     MenuBuyCannons menuBuyCannons;
+    MenuEquipCannonballs menuEquipCannonballs;
 
     // INITIALISATION
     myShip.setGolds(1000000);
@@ -18,8 +19,7 @@ int main(int argc, char*argv[])
     menuBar.setShip(myShip);
     menuBuyCannonballs.setShip(myShip);
     menuBuyCannons.setShip(myShip);
-
-
+    menuEquipCannonballs.setShip(myShip);
 
     while (window.isOpen())
     {
@@ -44,6 +44,10 @@ int main(int argc, char*argv[])
         case 2:
             menuBuyCannons.update(event);
             menuBuyCannons.render(window);
+            break;
+        case 4:
+            menuEquipCannonballs.update(event);
+            menuEquipCannonballs.render(window);
             break;
         case 7:
             window.close();

@@ -9,8 +9,11 @@
 #include "src/MenuBar.h"
 #include "src/MenuBuyCannonballs.h"
 #include "src/MenuBuyCannons.h"
+#include "src/MenuEquip.h"
+#include "src/MenuEquipCannonballs.h"
 #include "src/MenuTrade.h"
 #include "src/Ship.h"
+#include "src/ShipHandler.h"
 
 
 #endif // CLASS_H_INCLUDED
