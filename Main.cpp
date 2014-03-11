@@ -1,10 +1,17 @@
 #include "Main.h"
 #include "Class.h"
+#include <sstream>
 
 int main(int argc, char*argv[])
 {
+    std::ostringstream title;
+    title << "World of Sea v.";
+    title << CLIENT_VERSION_MAJOR << ".";
+    title << CLIENT_VERSION_MINOR << ".";
+    title << CLIENT_VERSION_PATCH;
+    
     // DECLARATION
-    sf::RenderWindow window(sf::VideoMode(LAUNCHER_WIDTH_X, LAUNCHER_HEIGHT_Y), "World of Sea v0", sf::Style::Close | sf::Style::Titlebar);
+    sf::RenderWindow window(sf::VideoMode(LAUNCHER_WIDTH_X, LAUNCHER_HEIGHT_Y), title.str(), sf::Style::Close | sf::Style::Titlebar);
     sf::Event event;
 
     Ship myShip;
@@ -13,6 +20,8 @@ int main(int argc, char*argv[])
     MenuBuyCannons menuBuyCannons;
     MenuEquipCannonballs menuEquipCannonballs;
     MenuEquipCannons menuEquipCannons;
+    
+    sf::String username, session;
 
     // INITIALISATION
     myShip.setGolds(1000000);
@@ -23,6 +32,15 @@ int main(int argc, char*argv[])
     menuBuyCannons.setShip(myShip);
     menuEquipCannonballs.setShip(myShip);
     menuEquipCannons.setShip(myShip);
+    
+    if (argc >= 3)
+    {
+        username = argv[1];
+        session = argv[2];
+        std::cout << "Launching, with player : " << argv[1] << " and session : " << argv[2] << std::endl;
+    }
+    else
+        std::cout << "Launching client in offline mode" << std::endl;
 
     while (window.isOpen())
     {
