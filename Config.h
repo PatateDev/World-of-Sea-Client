@@ -27,17 +27,45 @@
     #define CANNONS_HEAVY "resources/sprites/cannons/cannon_heavy.png"
 
     // BUTTONS
-    #define MENU_BUTTON_BUY "resources/sprites/ui/button/buy.png"
-    #define MENU_BUTTON_BUYFOCUS "resources/sprites/ui/button/buy_focused.png"
+    #define BUTTON_BUY "resources/sprites/ui/button/buy.png"
+    #define BUTTON_BUY_FOCUS "resources/sprites/ui/button/buy_focused.png"
 
-    #define MENU_BUTTON_EQUIP "resources/sprites/ui/button/equip.png"
-    #define MENU_BUTTON_EQUIPFOCUS "resources/sprites/ui/button/equip_focused.png"
+    #define BUTTON_EQUIP "resources/sprites/ui/button/equip.png"
+    #define BUTTON_EQUIP_FOCUS "resources/sprites/ui/button/equip_focus.png"
+    
+    #define BUTTON_HOME "resources/sprites/ui/button/home.png"
+    #define BUTTON_HOME_FOCUS "resources/sprites/ui/button/home_focus.png"
+    
+    #define BUTTON_BUY_CANNONS "resources/sprites/ui/button/buy_cannons.png"
+    #define BUTTON_BUY_CANNONS_FOCUS "resources/sprites/ui/button/buy_cannons_focus.png"
+    
+    #define BUTTON_BUY_CANNONBALLS "resources/sprites/ui/button/buy_cannonballs.png"
+    #define BUTTON_BUY_CANNONBALLS_FOCUS "resources/sprites/ui/button/buy_cannonballs_focus.png"
+    
+    #define BUTTON_BUY_DESIGNS "resources/sprites/ui/button/buy_designs.png"
+    #define BUTTON_BUY_DESIGNS_FOCUS "resources/sprites/ui/button/buy_designs_focus.png"
+    
+    #define BUTTON_EQUIP_CANNONBALLS "resources/sprites/ui/button/equip_cannonballs.png"
+    #define BUTTON_EQUIP_CANNONBALLS_FOCUS "resources/sprites/ui/button/equip_cannonballs_focus.png"
+    
+    #define BUTTON_EQUIP_CANNONS "resources/sprites/ui/button/equip_cannons.png"
+    #define BUTTON_EQUIP_CANNONS_FOCUS "resources/sprites/ui/button/equip_cannons_focus.png"
+    
+    #define BUTTON_EQUIP_DESIGNS "resources/sprites/ui/button/equip_designs.png"
+    #define BUTTON_EQUIP_DESIGNS_FOCUS "resources/sprites/ui/button/equip_designs_focus.png"
+    
+    #define BUTTON_EXIT "resources/sprites/ui/button/exit.png"
+    #define BUTTON_EXIT_FOCUS "resources/sprites/ui/button/exit_focus.png"
+    
+    // TEXTFIELDS
+    #define TEXTFIELD_1 "resources/sprites/ui/textfield/1.png"
+    #define TEXTFIELD_1_FOCUS "resources/sprites/ui/textfield/1_focused.png"
 
-    #define MENU_TEXTFIELD1 "resources/sprites/ui/textfield/1.png"
-    #define MENU_TEXTFIELDFOCUS1 "resources/sprites/ui/textfield/1_focused.png"
-
-    #define MENU_TEXTFIELD2 "resources/sprites/ui/textfield/2.png"
-    #define MENU_TEXTFIELDFOCUS2 "resources/sprites/ui/textfield/2_focused.png"
+    #define TEXTFIELD_2 "resources/sprites/ui/textfield/2.png"
+    #define TEXTFIELD_2_FOCUS "resources/sprites/ui/textfield/2_focused.png"
+    
+    //MenuBar
+    #define MENUBAR_BACKGROUND "resources/sprites/ui/background_trade.png"
 
     // FONTS
     #define FONT_PIECES_OF_EIGHT "resources/fonts/pieces_of_eight.ttf"

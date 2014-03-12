@@ -6,20 +6,20 @@ MenuEquipCannons::MenuEquipCannons()
     m_lightCannon.setLabelDescriptionText("\n\nDescription\nDamage\nWeight\n$");
     m_lightCannon.setLabelNameText("Light Cannon");
     m_lightCannon.setLabelImageTexture(CANNONS_LIGHT);
-    m_lightCannon.setButtonTexture(MENU_BUTTON_EQUIP);
-    m_lightCannon.setButtonTextureFocused(MENU_BUTTON_EQUIPFOCUS);
-    m_lightCannon.setTextfieldTexture(MENU_TEXTFIELD2);
-    m_lightCannon.setTextfieldTextureFocused(MENU_TEXTFIELDFOCUS2);
+    m_lightCannon.setButtonTexture(BUTTON_EQUIP);
+    m_lightCannon.setButtonTextureFocused(BUTTON_EQUIP_FOCUS);
+    m_lightCannon.setTextfieldTexture(TEXTFIELD_2);
+    m_lightCannon.setTextfieldTextureFocused(TEXTFIELD_2_FOCUS);
     m_lightCannon.setPosition(350, 100);
 
     m_heavyCannon.setFont(FONT_PIECES_OF_EIGHT);
     m_heavyCannon.setLabelDescriptionText("\n\nDescription\nDamage\nWeight\n$");
     m_heavyCannon.setLabelNameText("Heavy Cannon");
     m_heavyCannon.setLabelImageTexture(CANNONS_HEAVY);
-    m_heavyCannon.setButtonTexture(MENU_BUTTON_EQUIP);
-    m_heavyCannon.setButtonTextureFocused(MENU_BUTTON_EQUIPFOCUS);
-    m_heavyCannon.setTextfieldTexture(MENU_TEXTFIELD2);
-    m_heavyCannon.setTextfieldTextureFocused(MENU_TEXTFIELDFOCUS2);
+    m_heavyCannon.setButtonTexture(BUTTON_EQUIP);
+    m_heavyCannon.setButtonTextureFocused(BUTTON_EQUIP_FOCUS);
+    m_heavyCannon.setTextfieldTexture(TEXTFIELD_2);
+    m_heavyCannon.setTextfieldTextureFocused(TEXTFIELD_2_FOCUS);
     m_heavyCannon.setPosition(800, 100);
 
 

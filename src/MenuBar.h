@@ -40,10 +40,6 @@ class MenuBar : public Menu, public sf::ui::ComponentObserver, public ShipHandle
     sf::Texture m_buttonFocImgEquipDesigns;
     sf::Texture m_buttonFocImgExitGame;
 
-    sf::Texture m_buttonFirImgAccueil;
-    sf::Texture m_buttonFirImgCannons;
-    sf::Texture m_buttonFirImgCannonballs;
-
     sf::ui::Button m_buttonAccueil;
     sf::ui::Button m_buttonBuyCannons;
     sf::ui::Button m_buttonBuyCannonballs;
@@ -52,7 +48,7 @@ class MenuBar : public Menu, public sf::ui::ComponentObserver, public ShipHandle
     sf::ui::Button m_buttonEquipCannonBalls;
     sf::ui::Button m_buttonEquipDesign;
     sf::ui::Button m_buttonExitGame;
-    //
+    
     sf::ui::Label m_labelBackground;
     sf::ui::Label m_labelGolds;
 

@@ -7,8 +7,8 @@ m_value(0)
 {
     m_button.addObserver(this);
 
-    m_textureButton.loadFromFile(MENU_BUTTON_EQUIP);
-    m_textureButtonFocus.loadFromFile(MENU_BUTTON_EQUIPFOCUS);
+    m_textureButton.loadFromFile(BUTTON_EQUIP);
+    m_textureButtonFocus.loadFromFile(BUTTON_EQUIP_FOCUS);
 
     m_button.updateSize();
 }

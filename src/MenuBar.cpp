@@ -21,33 +21,29 @@ m_buttonExitGame(m_buttonImgExitGame, m_buttonFocImgExitGame, m_buttonFocImgExit
     m_labelGolds.setPosition(600, 0);
     m_labelGolds.setFontSize(60);
 
-    m_buttonImgAccueil.loadFromFile("resources/sprites/Bouton Home.png");
-    m_buttonFocImgAccueil.loadFromFile("resources/sprites/Bouton Home focus.png");
-    m_buttonFirImgAccueil.loadFromFile("resources/sprites/Bouton Home focus.png");
+    m_buttonImgAccueil.loadFromFile(BUTTON_HOME);
+    m_buttonFocImgAccueil.loadFromFile(BUTTON_HOME_FOCUS);
 
-    m_buttonImgBuyCannons.loadFromFile("resources/sprites/Bouton buy cannons.png");
-    m_buttonFocImgBuyCannons.loadFromFile("resources/sprites/Bouton buy cannons focus.png");
-    m_buttonFirImgCannons.loadFromFile("resources/sprites/Bouton buy cannons focus.png");
+    m_buttonImgBuyCannons.loadFromFile(BUTTON_BUY_CANNONS);
+    m_buttonFocImgBuyCannons.loadFromFile(BUTTON_BUY_CANNONS_FOCUS);
 
+    m_buttonImgBuyCannonballs.loadFromFile(BUTTON_BUY_CANNONBALLS);
+    m_buttonFocImgBuyCannonballs.loadFromFile(BUTTON_BUY_CANNONBALLS_FOCUS);
 
-    m_buttonImgBuyCannonballs.loadFromFile("resources/sprites/Bouton buy cannonballs.png");
-    m_buttonFocImgBuyCannonballs.loadFromFile("resources/sprites/Bouton buy cannonballs focus.png");
-    m_buttonFirImgCannonballs.loadFromFile("resources/sprites/Bouton buy cannonballs focus.png");
+    m_buttonImgBuyDesigns.loadFromFile(BUTTON_BUY_DESIGNS);
+    m_buttonFocImgBuyDesigns.loadFromFile(BUTTON_BUY_DESIGNS_FOCUS);
 
-    m_buttonImgBuyDesigns.loadFromFile("resources/sprites/Bouton buy designs.png");
-    m_buttonFocImgBuyDesigns.loadFromFile("resources/sprites/Bouton buy designs focus.png");
+    m_buttonImgEquipCannonBalls.loadFromFile(BUTTON_EQUIP_CANNONBALLS);
+    m_buttonFocImgEquipCannonballs.loadFromFile(BUTTON_EQUIP_CANNONBALLS_FOCUS);
 
-    m_buttonImgEquipCannonBalls.loadFromFile("resources/sprites/Bouton equip Cannonballs.png");
-    m_buttonFocImgEquipCannonballs.loadFromFile("resources/sprites/Bouton equip Cannonballs focus.png");
+    m_buttonImgEquipCannons.loadFromFile(BUTTON_EQUIP_CANNONS);
+    m_buttonFocImgEquipCannons.loadFromFile(BUTTON_EQUIP_CANNONS_FOCUS);
 
-    m_buttonImgEquipCannons.loadFromFile("resources/sprites/Bouton equip cannon.png");
-    m_buttonFocImgEquipCannons.loadFromFile("resources/sprites/Bouton equip cannon focus.png");
+    m_buttonImgEquipDesigns.loadFromFile(BUTTON_EQUIP_DESIGNS);
+    m_buttonFocImgEquipDesigns.loadFromFile(BUTTON_EQUIP_DESIGNS_FOCUS);
 
-    m_buttonImgEquipDesigns.loadFromFile("resources/sprites/Bouton equip design.png");
-    m_buttonFocImgEquipDesigns.loadFromFile("resources/sprites/Bouton equip design focus.png");
-
-    m_buttonImgExitGame.loadFromFile("resources/sprites/Bouton Exit.png");
-    m_buttonFocImgExitGame.loadFromFile("resources/sprites/Bouton Exit focus.png");
+    m_buttonImgExitGame.loadFromFile(BUTTON_EXIT);
+    m_buttonFocImgExitGame.loadFromFile(BUTTON_EXIT_FOCUS);
 
 
     m_buttonAccueil.addObserver(this);
@@ -59,14 +55,14 @@ m_buttonExitGame(m_buttonImgExitGame, m_buttonFocImgExitGame, m_buttonFocImgExit
     m_buttonEquipDesign.addObserver(this);
     m_buttonExitGame.addObserver(this);
 
-    m_buttonAccueil.setTexture(m_buttonImgAccueil);
-    m_buttonBuyCannonballs.setTexture(m_buttonImgBuyCannonballs);
-    m_buttonBuyCannons.setTexture(m_buttonImgBuyCannons);
-    m_buttonBuyDesign.setTexture(m_buttonImgBuyDesigns);
-    m_buttonEquipCannonBalls.setTexture(m_buttonImgEquipCannonBalls);
-    m_buttonEquipCannons.setTexture(m_buttonImgEquipCannons);
-    m_buttonEquipDesign.setTexture(m_buttonImgEquipDesigns);
-    m_buttonExitGame.setTexture(m_buttonImgExitGame);
+    m_buttonAccueil.updateSize();
+    m_buttonBuyCannonballs.updateSize();
+    m_buttonBuyCannons.updateSize();
+    m_buttonBuyDesign.updateSize();
+    m_buttonEquipCannonBalls.updateSize();
+    m_buttonEquipCannons.updateSize();
+    m_buttonEquipDesign.updateSize();
+    m_buttonExitGame.updateSize();
 
     m_buttonAccueil.setPosition(0, 0);
 
@@ -80,11 +76,9 @@ m_buttonExitGame(m_buttonImgExitGame, m_buttonFocImgExitGame, m_buttonFocImgExit
 
     m_buttonExitGame.setPosition(0, 392 + 56+ 56+ 56);
 
-	m_backgroundTexture.loadFromFile("resources/sprites/Background.bmp");
+	m_backgroundTexture.loadFromFile(MENUBAR_BACKGROUND);
 	m_labelBackground.setTexture(m_backgroundTexture);
 	m_labelBackground.setPosition(0, 0);
-
-
 }
 
 void MenuBar::update(sf::Event const &event)
