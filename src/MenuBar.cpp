@@ -12,7 +12,7 @@ m_buttonEquipCannons(m_buttonImgEquipCannons, m_buttonFocImgEquipCannons, m_butt
 m_buttonEquipDesign(m_buttonImgEquipDesigns, m_buttonFocImgEquipDesigns, m_buttonFocImgEquipDesigns),
 m_buttonExitGame(m_buttonImgExitGame, m_buttonFocImgExitGame, m_buttonFocImgExitGame)
 {
-    m_font.loadFromFile("resources/fonts/Pieces of Eight.ttf");
+    m_font.loadFromFile(FONT_PIECES_OF_EIGHT);
 
     sf::Color yellow(180, 180, 0);
 

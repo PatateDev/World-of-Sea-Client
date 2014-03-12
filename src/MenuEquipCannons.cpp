@@ -2,20 +2,20 @@
 
 MenuEquipCannons::MenuEquipCannons()
 {
-    m_lightCannon.setFont(POLICE_PIECES_OF_EIGHT);
+    m_lightCannon.setFont(FONT_PIECES_OF_EIGHT);
     m_lightCannon.setLabelDescriptionText("\n\nDescription\nDamage\nWeight\n$");
     m_lightCannon.setLabelNameText("Light Cannon");
-    m_lightCannon.setLabelImageTexture(MENU_BUYCANNONS_LIGHTCANNONS);
+    m_lightCannon.setLabelImageTexture(CANNONS_LIGHT);
     m_lightCannon.setButtonTexture(MENU_BUTTON_EQUIP);
     m_lightCannon.setButtonTextureFocused(MENU_BUTTON_EQUIPFOCUS);
     m_lightCannon.setTextfieldTexture(MENU_TEXTFIELD2);
     m_lightCannon.setTextfieldTextureFocused(MENU_TEXTFIELDFOCUS2);
     m_lightCannon.setPosition(350, 100);
 
-    m_heavyCannon.setFont(POLICE_PIECES_OF_EIGHT);
+    m_heavyCannon.setFont(FONT_PIECES_OF_EIGHT);
     m_heavyCannon.setLabelDescriptionText("\n\nDescription\nDamage\nWeight\n$");
     m_heavyCannon.setLabelNameText("Heavy Cannon");
-    m_heavyCannon.setLabelImageTexture(MENU_BUYCANNONS_HEAVYCANNONS);
+    m_heavyCannon.setLabelImageTexture(CANNONS_HEAVY);
     m_heavyCannon.setButtonTexture(MENU_BUTTON_EQUIP);
     m_heavyCannon.setButtonTextureFocused(MENU_BUTTON_EQUIPFOCUS);
     m_heavyCannon.setTextfieldTexture(MENU_TEXTFIELD2);

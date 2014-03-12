@@ -23,18 +23,15 @@ void MenuEquip::onComponentEvent(const sf::ui::ComponentEvent &event)
     if (dynamic_cast<sf::ui::ButtonClickedEvent const*>(&event))
     {
 		const sf::ui::ButtonClickedEvent &be = dynamic_cast<sf::ui::ButtonClickedEvent const&>(event);
-		// Pour tester quel button a ete clique :
 
-		  if (be.getSource() == &m_button)
-		  {
+		if (be.getSource() == &m_button)
+		{
             m_value = 1;
-          }
-		  else
-		  {
+        }
+		else
+		{
             std::cout << "Unknown button" << std::endl;
-		  }
-         //std::cout << "Menu: " << m_menu << std::endl;
-		 //std::cout << "Le button a l'addresse " << be.getSource() << " a ete clique" << std::endl;
+		}
 	}
 }
 
@@ -59,7 +56,7 @@ void MenuEquip::setTexture(sf::String link)
 void MenuEquip::setPosition(int x, int y)
 {
     m_sprite.setPosition(x, y);
-    m_button.setPosition(x, y + 150);
+    m_button.setPosition(x, y + m_sprite.getLocalBounds().height);
 }
 
 void MenuEquip::resetValue()
