@@ -22,6 +22,11 @@ class MenuEquipCannonballs : public ShipHandler, public sf::ui::ComponentObserve
         MenuEquip m_stoneMenu;
         MenuEquip m_cobbleStoneMenu;
         MenuEquip m_metalMenu;
+
+        int m_netWooden;
+        int m_netStone;
+        int m_netCobbleStone;
+        int m_netMetal;
 };
 
 #endif // MENUEQUIPCANNONBALLS_H

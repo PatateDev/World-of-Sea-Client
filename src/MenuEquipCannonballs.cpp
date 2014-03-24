@@ -1,6 +1,7 @@
 #include "MenuEquipCannonballs.h"
 
 MenuEquipCannonballs::MenuEquipCannonballs()
+:ShipHandler()
 {
     m_woodenMenu.setTexture(EQUIP_CANNONBALLS_WOOD);
     m_woodenMenu.setPosition(350, 100);
@@ -24,23 +25,82 @@ void MenuEquipCannonballs::update(sf::Event const &event)
 
     if (m_woodenMenu.getValue())
     {
-        m_ship->setCannonballs("Wooden Ammo");
-        m_woodenMenu.resetValue();
+        if (m_netWooden == 0)
+        {
+
+            m_packet->clear();
+            *m_packet << EQUIP_CANNONBALLS_WOOD;
+            m_socket->send(*m_packet);
+            m_netWooden = 1;
+        }
+        else if (m_netWooden == 1)
+        {
+            delete m_packet;
+            m_packet = m_networkReceive->getPacket(EQUIP_WOODEN_CANNONBALLS, *m_socket);
+
+            if (m_packet)
+            {
+                m_netWooden = 2;
+            }
+            else
+            {
+                m_packet = new sf::Packet;
+            }
+
+        }
+        else if (m_netWooden == 2)
+        {
+
+            m_ship->setCannonballs(WOODEN_CANNONBALLS_TYPE);
+            m_woodenMenu.resetValue();
+
+            m_packet->clear();
+            m_netWooden= 0;
+        }
     }
     else if (m_stoneMenu.getValue())
     {
-        m_ship->setCannonballs("Stone Ammo");
+         if (m_netStone == 0)
+        {
 
-        m_stoneMenu.resetValue();
+            m_packet->clear();
+            *m_packet << EQUIP_CANNONBALLS_STONE;
+            m_socket->send(*m_packet);
+            m_netStone = 1;
+        }
+        else if (m_netStone == 1)
+        {
+            delete m_packet;
+            m_packet = m_networkReceive->getPacket(EQUIP_STONE_CANNONBALLS, *m_socket);
+
+            if (m_packet)
+            {
+                m_netStone = 2;
+            }
+            else
+            {
+                m_packet = new sf::Packet;
+            }
+
+        }
+        else if (m_netStone == 2)
+        {
+
+            m_ship->setCannonballs(STONE_CANNONBALLS_TYPE);
+            m_woodenMenu.resetValue();
+
+            m_packet->clear();
+            m_netStone= 0;
+        }
     }
     else if (m_cobbleStoneMenu.getValue())
     {
-        m_ship->setCannonballs("Cobblestone Ammo");
+        m_ship->setCannonballs(COBBLESTONE_CANNONBALLS_TYPE);
         m_cobbleStoneMenu.resetValue();
     }
     else if (m_metalMenu.getValue())
     {
-        m_ship->setCannonballs("Metal Ammo");
+        m_ship->setCannonballs(METAL_CANNONBALLS_TYPE);
         m_metalMenu.resetValue();
     }
 }

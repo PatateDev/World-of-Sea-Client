@@ -1,10 +1,13 @@
 #include "MenuBuyCannons.h"
 
 MenuBuyCannons::MenuBuyCannons()
+:ShipHandler(),
+m_netLight(0),
+m_netHeavy(0)
 {
     m_lightCannon.setFont(FONT_PIECES_OF_EIGHT);
     m_lightCannon.setLabelDescriptionText("\n\nDescription\nDamage\nWeight\n$");
-    m_lightCannon.setLabelNameText("Light Cannon");
+    m_lightCannon.setLabelNameText(LIGHT_CANNON_TYPE);
     m_lightCannon.setLabelImageTexture(CANNONS_LIGHT);
     m_lightCannon.setButtonTexture(BUTTON_BUY);
     m_lightCannon.setButtonTextureFocused(BUTTON_BUY_FOCUS);
@@ -14,7 +17,7 @@ MenuBuyCannons::MenuBuyCannons()
 
     m_heavyCannon.setFont(FONT_PIECES_OF_EIGHT);
     m_heavyCannon.setLabelDescriptionText("\n\nDescription\nDamage\nWeight\n$");
-    m_heavyCannon.setLabelNameText("Heavy Cannon");
+    m_heavyCannon.setLabelNameText(HEAVY_CANNON_TYPE);
     m_heavyCannon.setLabelImageTexture(CANNONS_HEAVY);
     m_heavyCannon.setButtonTexture(BUTTON_BUY);
     m_heavyCannon.setButtonTextureFocused(BUTTON_BUY_FOCUS);
@@ -28,25 +31,96 @@ void MenuBuyCannons::update(sf::Event const &event)
     m_lightCannon.update(event);
     m_heavyCannon.update(event);
 
-    if ((m_lightCannon.getValue() != 0) && ((m_ship->getGolds() - (LIGHT_CANNON_PRICE * m_lightCannon.getValue())) > 0))
+    if (m_lightCannon.getValue() != 0)
     {
-        // BUY WOODEN CANNONBALLS
-        m_ship->setGolds(m_ship->getGolds() - (LIGHT_CANNON_PRICE * m_lightCannon.getValue()));
-        Cannon c;
-        c.setType("Light Cannon");
-        c.setCannon(m_lightCannon.getValue());
-        m_ship->addCannon(c);
-        m_lightCannon.resetValue();
+        // BUY LIGHT CANNONBALLS
+        if (m_netLight == 0)
+        {
+
+            m_packet->clear();
+            *m_packet << BUY_LIGHT_CANNONS << m_lightCannon.getValue() << m_ship->getGolds();
+            m_socket->send(*m_packet);
+            m_netLight = 1;
+        }
+        else if (m_netLight == 1)
+        {
+            delete m_packet;
+            m_packet = m_networkReceive->getPacket(BUY_LIGHT_CANNONS, *m_socket);
+
+            if (m_packet)
+            {
+                m_netLight = 2;
+
+            }
+            else
+            {
+                m_packet = new sf::Packet;
+            }
+
+        }
+        else if (m_netLight == 2)
+        {
+            *m_packet >> m_ammo >> m_golds;
+
+            Cannon c;
+            c.setType(LIGHT_CANNON_TYPE);
+            c.setCannon(m_ammo);
+
+            m_ship->addCannon(c);
+            m_ship->setGolds(m_golds);
+
+            //std::cout << "Ammo: " << m_ammo << " Golds: " << m_ship->getGolds() << std::endl;
+
+            m_lightCannon.resetValue();
+            m_packet->clear();
+            m_netLight = 0;
+        }
+
     }
-    else if ((m_heavyCannon.getValue() != 0) && ((m_ship->getGolds() - (HEAVY_CANNON_PRICE * m_heavyCannon.getValue())) > 0))
+    else if (m_heavyCannon.getValue() != 0)
     {
-        // BUY WOODEN CANNONBALLS
-        m_ship->setGolds(m_ship->getGolds() - (HEAVY_CANNON_PRICE * m_heavyCannon.getValue()));
-        Cannon c;
-        c.setType("Heavy Cannon");
-        c.setCannon(m_heavyCannon.getValue());
-        m_ship->addCannon(c);
-        m_heavyCannon.resetValue();
+        // BUY HEAVY CANNONBALLS
+        if (m_netHeavy == 0)
+        {
+
+            m_packet->clear();
+            *m_packet << BUY_HEAVY_CANNONS << m_heavyCannon.getValue() << m_ship->getGolds();
+            m_socket->send(*m_packet);
+            m_netHeavy = 1;
+        }
+        else if (m_netHeavy == 1)
+        {
+            delete m_packet;
+            m_packet = m_networkReceive->getPacket(BUY_HEAVY_CANNONS, *m_socket);
+
+            if (m_packet)
+            {
+                m_netHeavy = 2;
+
+            }
+            else
+            {
+                m_packet = new sf::Packet;
+            }
+
+        }
+        else if (m_netHeavy == 2)
+        {
+            *m_packet >> m_ammo >> m_golds;
+
+            Cannon c;
+            c.setType(HEAVY_CANNON_TYPE);
+            c.setCannon(m_ammo);
+
+            m_ship->addCannon(c);
+            m_ship->setGolds(m_golds);
+
+            //std::cout << "Ammo: " << m_ammo << " Golds: " << m_ship->getGolds() << std::endl;
+
+            m_heavyCannon.resetValue();
+            m_packet->clear();
+            m_netHeavy = 0;
+        }
     }
 
 }

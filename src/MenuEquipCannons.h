@@ -21,6 +21,14 @@ class MenuEquipCannons : public ShipHandler, sf::ui::ComponentObserver
     private:
         MenuTrade m_lightCannon;
         MenuTrade m_heavyCannon;
+
+        int m_netLight;
+        int m_netHeavy;
+
+        int m_ID;
+        int m_ammo;
+
+
 };
 
 #endif // MENUEQUIPCANNONS_H

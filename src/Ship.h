@@ -48,7 +48,7 @@ class Ship
     private:
         int m_golds;
 
-        int m_mapHp;
+        int m_maxHp;
         int m_hp;
 
         Cannon m_cannonArray[MAX_CANNON + 12];

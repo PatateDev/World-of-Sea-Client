@@ -82,8 +82,8 @@ void Ship::addDesign(Design design)
 
 void Ship::addMaxHp(int hp)
 {
-    m_mapHp = m_mapHp + hp;
-    std::cout << "Ship::addMaxHp, Hp increase from " << m_mapHp - hp << " to "<< m_mapHp << "." << std::endl;
+    m_maxHp = m_maxHp + hp;
+    std::cout << "Ship::addMaxHp, Hp increase from " << m_maxHp - hp << " to "<< m_maxHp << "." << std::endl;
 }
 
 void Ship::addMaxCannon(int nb)

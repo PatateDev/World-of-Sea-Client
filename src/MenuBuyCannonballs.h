@@ -23,6 +23,15 @@ class MenuBuyCannonballs : public Menu, public sf::ui::ComponentObserver, public
         MenuTrade m_menuStoneCannonballs;
         MenuTrade m_menuCobbleStoneCannonballs;
         MenuTrade m_menuMetalCannonballs;
+
+        int m_netWooden;
+        int m_netStone;
+        int m_netCobbleStone;
+        int m_netMetal;
+
+        int m_golds;
+        int m_ammo;
+        int m_ID;
 };
 
 #endif // MENUBUYCANNONBALLS_H
