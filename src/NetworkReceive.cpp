@@ -1,7 +1,7 @@
 #include "NetworkReceive.h"
 
 NetworkReceive::NetworkReceive()
-:m_canReceive(true)
+:m_canReceive(true), m_packet_ID(0)
 {
     m_packet = new sf::Packet;
 }

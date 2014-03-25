@@ -27,26 +27,11 @@ void MenuEquipCannonballs::update(sf::Event const &event)
     {
         if (m_netWooden == 0)
         {
-
-            m_packet->clear();
-            *m_packet << EQUIP_CANNONBALLS_WOOD;
-            m_socket->send(*m_packet);
-            m_netWooden = 1;
+            m_netWooden = this->request(0, EQUIP_WOODEN_CANNONBALLS);
         }
         else if (m_netWooden == 1)
         {
-            delete m_packet;
-            m_packet = m_networkReceive->getPacket(EQUIP_WOODEN_CANNONBALLS, *m_socket);
-
-            if (m_packet)
-            {
-                m_netWooden = 2;
-            }
-            else
-            {
-                m_packet = new sf::Packet;
-            }
-
+            m_netWooden = this->request(1, EQUIP_WOODEN_CANNONBALLS);
         }
         else if (m_netWooden == 2)
         {
@@ -60,48 +45,63 @@ void MenuEquipCannonballs::update(sf::Event const &event)
     }
     else if (m_stoneMenu.getValue())
     {
-         if (m_netStone == 0)
+        if (m_netStone == 0)
         {
-
-            m_packet->clear();
-            *m_packet << EQUIP_CANNONBALLS_STONE;
-            m_socket->send(*m_packet);
-            m_netStone = 1;
+            m_netStone = this->request(0, EQUIP_STONE_CANNONBALLS);
         }
         else if (m_netStone == 1)
         {
-            delete m_packet;
-            m_packet = m_networkReceive->getPacket(EQUIP_STONE_CANNONBALLS, *m_socket);
-
-            if (m_packet)
-            {
-                m_netStone = 2;
-            }
-            else
-            {
-                m_packet = new sf::Packet;
-            }
-
+            m_netStone = this->request(1, EQUIP_STONE_CANNONBALLS);
         }
         else if (m_netStone == 2)
         {
 
             m_ship->setCannonballs(STONE_CANNONBALLS_TYPE);
-            m_woodenMenu.resetValue();
+            m_stoneMenu.resetValue();
 
             m_packet->clear();
-            m_netStone= 0;
+            m_netStone = 0;
         }
     }
     else if (m_cobbleStoneMenu.getValue())
     {
-        m_ship->setCannonballs(COBBLESTONE_CANNONBALLS_TYPE);
-        m_cobbleStoneMenu.resetValue();
+        if (m_netCobbleStone == 0)
+        {
+            m_netCobbleStone = this->request(0, EQUIP_COBBLESTONE_CANNONBALLS);
+        }
+        else if (m_netCobbleStone == 1)
+        {
+            m_netCobbleStone = this->request(1, EQUIP_COBBLESTONE_CANNONBALLS);
+        }
+        else if (m_netCobbleStone == 2)
+        {
+
+            m_ship->setCannonballs(COBBLESTONE_CANNONBALLS_TYPE);
+            m_cobbleStoneMenu.resetValue();
+
+            m_packet->clear();
+            m_netCobbleStone = 0;
+        }
     }
     else if (m_metalMenu.getValue())
     {
-        m_ship->setCannonballs(METAL_CANNONBALLS_TYPE);
-        m_metalMenu.resetValue();
+        if (m_netMetal == 0)
+        {
+            m_netMetal = this->request(0, EQUIP_METAL_CANNONBALLS);
+        }
+        else if (m_netMetal == 1)
+        {
+            m_netMetal = this->request(1, EQUIP_METAL_CANNONBALLS);
+        }
+        else if (m_netMetal == 2)
+        {
+
+            m_ship->setCannonballs(METAL_CANNONBALLS_TYPE);
+            m_metalMenu.resetValue();
+
+            m_packet->clear();
+            m_netMetal = 0;
+        }
     }
 }
 

@@ -64,27 +64,11 @@ void MenuBuyCannonballs::update(sf::Event const &event)
         // BUY WOODEN CANNONBALLS
         if (m_netWooden == 0)
         {
-
-            m_packet->clear();
-            *m_packet << BUY_WOODEN_CANNONBALLS << m_menuWoodenCannonballs.getValue() << m_ship->getGolds();
-            m_socket->send(*m_packet);
-            m_netWooden = 1;
+            m_netWooden = this->request(0, BUY_WOODEN_CANNONBALLS, m_menuWoodenCannonballs.getValue(), 0, 0, 0);
         }
         else if (m_netWooden == 1)
         {
-            delete m_packet;
-            m_packet = m_networkReceive->getPacket(BUY_WOODEN_CANNONBALLS, *m_socket);
-
-            if (m_packet)
-            {
-                m_netWooden = 2;
-
-            }
-            else
-            {
-                m_packet = new sf::Packet;
-            }
-
+             m_netWooden = this->request(1, BUY_WOODEN_CANNONBALLS, m_menuWoodenCannonballs.getValue(), 0, 0, 0);
         }
         else if (m_netWooden == 2)
         {
@@ -108,27 +92,14 @@ void MenuBuyCannonballs::update(sf::Event const &event)
     else if (m_menuCobbleStoneCannonballs.getValue() != 0)
     {
         // BUY STONE CANNONBALLS
+
         if (m_netCobbleStone == 0)
         {
-
-            m_packet->clear();
-            *m_packet << BUY_COBBLESTONE_CANNONBALLS << m_menuCobbleStoneCannonballs.getValue() << m_ship->getGolds();
-            m_socket->send(*m_packet);
-            m_netCobbleStone = 1;
+            m_netCobbleStone = this->request(0, BUY_COBBLESTONE_CANNONBALLS, m_menuCobbleStoneCannonballs.getValue());
         }
         else if (m_netCobbleStone == 1)
         {
-            delete m_packet;
-            m_packet = m_networkReceive->getPacket(BUY_COBBLESTONE_CANNONBALLS, *m_socket);
-
-            if (m_packet)
-            {
-                m_netCobbleStone = 2;
-            }
-            else
-            {
-                m_packet = new sf::Packet;
-            }
+            m_netCobbleStone = this->request(1, BUY_COBBLESTONE_CANNONBALLS, m_menuCobbleStoneCannonballs.getValue());
 
         }
         else if (m_netCobbleStone == 2)
@@ -154,26 +125,11 @@ void MenuBuyCannonballs::update(sf::Event const &event)
         // BUY STONE CANNONBALLS
         if (m_netMetal == 0)
         {
-
-            m_packet->clear();
-            *m_packet << BUY_METAL_CANNONBALLS << m_menuMetalCannonballs.getValue() << m_ship->getGolds();
-            m_socket->send(*m_packet);
-            m_netMetal = 1;
+            m_netMetal = this->request(0, BUY_METAL_CANNONBALLS, m_menuMetalCannonballs.getValue());
         }
         else if (m_netMetal == 1)
         {
-            delete m_packet;
-            m_packet = m_networkReceive->getPacket(BUY_METAL_CANNONBALLS, *m_socket);
-
-            if (m_packet)
-            {
-                m_netMetal = 2;
-            }
-            else
-            {
-                m_packet = new sf::Packet;
-            }
-
+            m_netMetal = this->request(1, BUY_METAL_CANNONBALLS, m_menuMetalCannonballs.getValue());
         }
         else if (m_netMetal == 2)
         {
@@ -198,26 +154,11 @@ void MenuBuyCannonballs::update(sf::Event const &event)
         // BUY STONE CANNONBALLS
         if (m_netStone == 0)
         {
-
-            m_packet->clear();
-            *m_packet << BUY_STONE_CANNONBALLS << m_menuStoneCannonballs.getValue() << m_ship->getGolds();
-            m_socket->send(*m_packet);
-            m_netStone = 1;
+            m_netStone = this->request(0, BUY_STONE_CANNONBALLS, m_menuStoneCannonballs.getValue());
         }
         else if (m_netStone == 1)
         {
-            delete m_packet;
-            m_packet = m_networkReceive->getPacket(BUY_STONE_CANNONBALLS, *m_socket);
-
-            if (m_packet)
-            {
-                m_netStone = 2;
-            }
-            else
-            {
-                m_packet = new sf::Packet;
-            }
-
+            m_netStone = this->request(1, BUY_STONE_CANNONBALLS, m_menuStoneCannonballs.getValue());
         }
         else if (m_netStone == 2)
         {

@@ -36,27 +36,11 @@ void MenuBuyCannons::update(sf::Event const &event)
         // BUY LIGHT CANNONBALLS
         if (m_netLight == 0)
         {
-
-            m_packet->clear();
-            *m_packet << BUY_LIGHT_CANNONS << m_lightCannon.getValue() << m_ship->getGolds();
-            m_socket->send(*m_packet);
-            m_netLight = 1;
+            m_netLight = this->request(0, BUY_LIGHT_CANNONS, m_lightCannon.getValue());
         }
         else if (m_netLight == 1)
         {
-            delete m_packet;
-            m_packet = m_networkReceive->getPacket(BUY_LIGHT_CANNONS, *m_socket);
-
-            if (m_packet)
-            {
-                m_netLight = 2;
-
-            }
-            else
-            {
-                m_packet = new sf::Packet;
-            }
-
+            m_netLight = this->request(1, BUY_LIGHT_CANNONS, m_lightCannon.getValue());
         }
         else if (m_netLight == 2)
         {
@@ -82,27 +66,11 @@ void MenuBuyCannons::update(sf::Event const &event)
         // BUY HEAVY CANNONBALLS
         if (m_netHeavy == 0)
         {
-
-            m_packet->clear();
-            *m_packet << BUY_HEAVY_CANNONS << m_heavyCannon.getValue() << m_ship->getGolds();
-            m_socket->send(*m_packet);
-            m_netHeavy = 1;
+            m_netHeavy = this->request(0, BUY_HEAVY_CANNONS, m_heavyCannon.getValue());
         }
         else if (m_netHeavy == 1)
         {
-            delete m_packet;
-            m_packet = m_networkReceive->getPacket(BUY_HEAVY_CANNONS, *m_socket);
-
-            if (m_packet)
-            {
-                m_netHeavy = 2;
-
-            }
-            else
-            {
-                m_packet = new sf::Packet;
-            }
-
+            m_netHeavy = this->request(1, BUY_HEAVY_CANNONS, m_heavyCannon.getValue());
         }
         else if (m_netHeavy == 2)
         {

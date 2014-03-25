@@ -38,25 +38,11 @@ void MenuEquipCannons::update(sf::Event const &event)
     {
         if (m_netLight == 0)
         {
-            m_packet->clear();
-            *m_packet << EQUIP_LIGHT_CANNONS << m_lightCannon.getValue();
-            m_socket->send(*m_packet);
-            m_netLight = 1;
+            m_netLight = this->request(0, EQUIP_LIGHT_CANNONS, m_lightCannon.getValue());
         }
         else if (m_netLight == 1)
         {
-            delete m_packet;
-            m_packet = m_networkReceive->getPacket(EQUIP_LIGHT_CANNONS, *m_socket);
-
-            if (m_packet)
-            {
-                m_netLight = 2;
-            }
-            else
-            {
-                m_packet = new sf::Packet;
-            }
-
+            m_netLight = this->request(1, EQUIP_LIGHT_CANNONS, m_lightCannon.getValue());
         }
         else if (m_netLight == 2)
         {
@@ -79,26 +65,11 @@ void MenuEquipCannons::update(sf::Event const &event)
     {
         if (m_netHeavy == 0)
         {
-            m_packet->clear();
-            *m_packet << EQUIP_HEAVY_CANNONS << m_heavyCannon.getValue();
-            m_socket->send(*m_packet);
-            m_netHeavy = 1;
+            m_netHeavy = this->request(0, EQUIP_HEAVY_CANNONS, m_heavyCannon.getValue());
         }
         else if (m_netHeavy == 1)
         {
-            delete m_packet;
-            m_packet = m_networkReceive->getPacket(EQUIP_HEAVY_CANNONS, *m_socket);
-
-            if (m_packet)
-            {
-                m_netHeavy = 2;
-
-            }
-            else
-            {
-                m_packet = new sf::Packet;
-            }
-
+            m_netHeavy = this->request(1, EQUIP_HEAVY_CANNONS, m_heavyCannon.getValue());
         }
         else if (m_netHeavy == 2)
         {
