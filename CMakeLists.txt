@@ -43,5 +43,6 @@ target_link_libraries(
 	sfml-ui
 	sfml-graphics
 	sfml-window
+	sfml-network
 	sfml-system
 )
